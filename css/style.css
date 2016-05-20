@@ -251,10 +251,6 @@ Common Industry Breakpoints (but take your own project into consideration)
 @media only screen and (max-width : 1200px) {
 /* less than 1200 */
 
-	header div p:nth-child(1){
-		color:red;
-	}
-	
 	/* nav tablet styles */
 	nav ul li{
 		margin:0px 40px;	
@@ -265,10 +261,6 @@ Common Industry Breakpoints (but take your own project into consideration)
 @media only screen and (max-width : 992px) {
 /* less than 992 */
 
-	header div p:nth-child(1){
-		color:blue;
-	}
-	
 	#wrapper {
 		width: 100%;
 	}
@@ -300,10 +292,6 @@ Common Industry Breakpoints (but take your own project into consideration)
 @media only screen and (max-width : 768px) {
 /* less than 768 */
 
-	header div p:nth-child(1){
-		color:green;
-	}
-	
 	header div{
 		left:10px;
 	}
@@ -326,10 +314,6 @@ Common Industry Breakpoints (but take your own project into consideration)
 
 @media only screen and (max-width : 590px) {
 /* less than 650px */
-
-	header div p:nth-child(1){
-		color:yellow;
-	}	
 
 	nav img{
 		width:197px;
@@ -380,10 +364,6 @@ Common Industry Breakpoints (but take your own project into consideration)
 @media only screen and (max-width : 320px) {
 /* less than 320 */
 
-	header div p:nth-child(1){
-		color:orange;
-	}
-	
 	#wrapper {
 		width: 100%;
 		qmargin: 0 auto;
