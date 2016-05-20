@@ -1,0 +1,392 @@
+/*
+FF2851 (Red)
+2BA9DE (Blue)
+38454A (Grey)
+*/
+html, body{
+	margin:0;
+	padding:0;	
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #07304d;
+}
+img {
+	border: 0;
+}
+#wrapper { /* modified by media queries */
+	width: 960px;
+	margin: 0 auto;
+}
+.clearfix:after {
+	clear:both;
+	content:"";
+	display:block;
+	height:1%;
+	line-height:0;
+	visibility:hidden;
+}
+body a{
+	color: #fff;	
+}
+body a:hover{
+	color: #2BA9DE;
+}
+nav ul li a{
+	font-weight:bold;
+	text-decoration:none;	
+}
+nav ul li a:hover{
+	color: #333;	
+}
+/*------------------------------ NAV ------------------------------*/
+nav{
+	text-align:center;	
+	background-color:#2ba9de;
+	position:relative; /* for the absolute positioned logo to position properly */
+	padding:20px;
+}
+nav ul{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+nav ul li{ /* modified by media queries */
+	display: inline;
+	margin:0px 60px;	
+}
+nav ul li:nth-child(2){
+	margin-right:200px;	
+}
+nav ul li:nth-child(3){
+	margin-left:200px;	
+}
+nav img{
+	position:absolute; /* in relation to the relative positioned nav element */	
+	margin:0 auto;
+	left:0;
+	right:0;
+	top:0;
+	z-index:1;
+}
+/*------------------------------ HEADER ------------------------------*/
+header{
+	margin:0 auto;
+	position:relative;
+}
+header img{
+	width:100%;	
+}
+header div{
+	color:#333;
+	width:250px;
+	text-align:center;
+	position:absolute;
+	top:70px;
+	left:100px;
+}
+header div p{
+	margin-bottom:80px;	
+}
+header div p:nth-child(1){
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:20px;
+}
+.awesome-button{
+	background-color: #ff2951;
+	display: inline-block;
+	padding: 10px 20px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px #999;
+	-webkit-box-shadow: 0 1px 3px #999;
+	box-shadow: 0 1px 3px #999;
+	text-shadow: 0 -1px 1px #222;
+	position: relative;
+	cursor: pointer;
+}
+/*------------------------------ PRODUCT FEATURES ------------------------------*/
+#product-features{
+	width:100%;	
+	text-align:center;
+}
+#product-features div{
+	text-align:center;
+	width:316px;
+	display:inline-block;
+}
+#product-features div p{
+	width:75%;
+	margin:0 auto;	
+}
+/*------------------------------ TESTIMONIALS ------------------------------*/
+#testimonials {
+	margin: 50px auto 10px;
+	position:relative;
+}
+#testimonials img { width:100%; }
+#testimonials div{
+	color:#333;
+	width:45%;
+	position:absolute;
+	top:50px;
+	left:80px;
+}
+#testimonials div p:nth-child(1){
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:50px;
+}
+#testimonials div p:nth-child(2){
+	width: 100%;
+	font-weight:bold;
+}
+#testimonials div p:nth-child(3){
+	position:relative;
+	top:0;
+	left:280px;
+	font-weight:bold;
+}
+#testimonials button{
+	margin-top:50px;	
+}
+/*------------------------------ FOOTER ------------------------------*/
+footer{
+	background-color: #2ba9de;
+	width: 100%;
+	text-align: center;
+	padding: 25px 0px;
+}
+footer .motto{
+	color:  #333;
+	font-size: 18px;
+	margin: 0;
+}
+footer .company-name{
+	color:  #333;
+	font-size: 14px;
+	margin: 0;
+}
+footer .footer-links{
+	list-style: none;
+	font-weight: bold;
+	color:  #ffffff;
+	padding: 35px 0 23px;
+	margin: 0;
+}
+footer .footer-links a{
+	display:inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+footer .footer-links a:hover{
+	color: #333;
+}
+
+/*------------------------------ MEDIA QUERIES ------------------------------*/
+/* Quick tutorial
+
+@media only screen and (min-width: 330px)  {...}
+
+"If [device width] is greater than or equal to 330px, then do {...}" 
+"If [device width] is at least 330px, then do {...}"
+
+min-width is the minimum width at which these styles will be shown. 
+A screen narrower than the specified number will not use the styles associated with that rule.
+
+@media only screen and (max-width: 330px)  {...}
+
+"If [device width] is less than or equal to 330px, then do {...}"
+"If [device width] is at the most 330px, then do {...}"
+
+This means that max-width is the maximum width at which these styles will be shown.
+A screen wider than the specified number will not use the styles associated with that rule.
+
+@media only screen and (min-width:480px) and (max-width: 640px)  {...}
+"If [device width] is greater than 480px and less than 640px, then do {...}
+
+Caveats:
+
+@media only screen and (max-width: 640px)  {...}
+@media only screen and (max-width: 479px)  {...}
+
+the second media query actually trumps the first due to standard CSS inheritance rules. 
+By rights, the first triggers any device with a width less than 640px and the second triggers 
+any device with a width less than 479px. 
+So if you truly want to trump the first, you need to make sure that you overwrite all CSS properties 
+under the second condition.
+
+A more succinct approach would be to do the following:
+
+@media only screen and (min-width:480px) and (max-width: 640px)  {...}
+@media only screen and (max-width: 479px)  {...}
+
+Common Industry Breakpoints (but take your own project into consideration)
+
+    Large Devices, Wide Screens 
+    @media only screen and (max-width : 1200px) {...}
+
+    Medium Devices, Desktops
+    @media only screen and (max-width : 992px) {...}
+
+    Small Devices, Tablets
+    @media only screen and (max-width : 768px) {...}
+
+    Extra Small Devices, Phones 
+    @media only screen and (max-width : 480px) {...}
+
+    Custom, iPhone Retina 
+    @media only screen and (max-width : 320px) {...}
+	
+*/
+
+/* all rulesets defined above will be in play on any device greater than 1200px wide */
+
+@media only screen and (max-width : 1200px) {
+/* less than 1200 */
+
+	header div p:nth-child(1){
+		color:red;
+	}
+	
+	/* nav tablet styles */
+	nav ul li{
+		margin:0px 40px;	
+	}
+
+}
+
+@media only screen and (max-width : 992px) {
+/* less than 992 */
+
+	header div p:nth-child(1){
+		color:blue;
+	}
+	
+	#wrapper {
+		width: 100%;
+	}
+	
+	/* nav tablet styles */
+	nav ul{
+		display:none;
+	}
+	
+	#testimonials div{
+		position:absolute;
+		top:30px;
+		left:80px;
+	}
+	#testimonials div p:nth-child(1){
+		font-size:20px;
+		margin-bottom:20px;
+	}
+	#testimonials div p:nth-child(3){
+		left:0;
+		margin-bottom:0;
+	}
+	#testimonials button{
+		margin-top:10px;	
+	}
+	
+}
+
+@media only screen and (max-width : 768px) {
+/* less than 768 */
+
+	header div p:nth-child(1){
+		color:green;
+	}
+	
+	header div{
+		left:10px;
+	}
+	
+	header div p{
+		margin-bottom:30px;	
+	}
+	
+	#testimonials div{
+		top:0;
+		left:30px;
+		width: 50%;
+	}
+	
+	#testimonials div p:nth-child(3){
+		left:0;
+	}
+
+}
+
+@media only screen and (max-width : 590px) {
+/* less than 650px */
+
+	header div p:nth-child(1){
+		color:yellow;
+	}	
+
+	nav img{
+		width:197px;
+		height:64px;
+	}
+	
+	#testimonials div{
+		top:0;
+		left:30px;
+		width: 50%;
+	}
+	
+	#testimonials div p:nth-child(1){
+		width:100%;
+	}
+	
+	#testimonials div p:nth-child(2){
+		display:none;
+	}
+	
+	#testimonials div p:nth-child(3){
+		display:none;
+	}
+	
+	#testimonials button{
+		margin-top:0px;	
+		padding: 5px 10px;
+	}
+
+	header{
+		width:100%;
+	}
+	
+	header div{
+		color:#333;
+		width:250px;
+		text-align:center;
+		position:static;
+		margin:0 auto;
+	}
+}
+
+@media only screen and (max-width : 480px) {
+/* less than 480px */
+	
+}
+
+@media only screen and (max-width : 320px) {
+/* less than 320 */
+
+	header div p:nth-child(1){
+		color:orange;
+	}
+	
+	#wrapper {
+		width: 100%;
+		qmargin: 0 auto;
+	}
+
+}
