@@ -270,6 +270,10 @@ Common Industry Breakpoints (but take your own project into consideration)
 		display:none;
 	}
 	
+	#product-features div{
+		margin:20px 0;
+	}
+	
 	#testimonials div{
 		position:absolute;
 		top:30px;
@@ -354,6 +358,17 @@ Common Industry Breakpoints (but take your own project into consideration)
 		position:static;
 		margin:0 auto;
 	}
+	
+	#product-features{
+		margin-top: 50px;
+	}
+	
+	#product-features h2{
+		background-color:#38454a;
+		color: #fff;	
+		padding:10px 0px;
+	}
+	
 }
 
 @media only screen and (max-width : 480px) {
