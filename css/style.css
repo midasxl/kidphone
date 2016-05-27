@@ -39,19 +39,22 @@ nav ul li a{
 nav ul li a:hover{
 	color: #333;	
 }
-/*------------------------------ NAV ------------------------------*/
+
+
+
+/*------------------------------ NAV ------------------------------ */
 nav{
 	text-align:center;	
 	background-color:#2ba9de;
-	position:relative; /* for the absolute positioned logo to position properly */
-	padding:20px;
+	position:relative;
+	padding:20px 0px;
 }
 nav ul{
 	list-style-type: none;
 	margin:0;
 	padding:0;
 }
-nav ul li{ /* modified by media queries */
+nav ul li{
 	display: inline;
 	margin:0px 60px;	
 }
@@ -62,13 +65,55 @@ nav ul li:nth-child(3){
 	margin-left:200px;	
 }
 nav img{
-	position:absolute; /* in relation to the relative positioned nav element */	
+	position:absolute;
 	margin:0 auto;
 	left:0;
 	right:0;
 	top:0;
 	z-index:1;
 }
+.toggle-nav {
+    display:none;
+}
+
+.menu img{
+	position:absolute;
+	margin:0 auto;
+	left:0;
+	right:0;
+	top:0;
+	z-index:1;
+}
+.menu {
+	width:100%;
+	background:#2ba9de;
+}
+
+.menu ul {
+    display:inline-block;
+}
+
+.menu li {
+    list-style:none;
+    font-size:17px;
+}
+
+.menu a {
+    text-shadow:0px 1px 0px rgba(0,0,0,0.5);
+    color:#fff;
+    transition:color linear 0.15s;
+	text-decoration:none;
+}
+
+.menu a:hover {
+    text-decoration:none;
+    color:#333;
+}
+a.toggle-nav:hover {
+    text-decoration:none;
+    color:#2ba9de;
+}
+
 /*------------------------------ HEADER ------------------------------*/
 header{
 	margin:0 auto;
@@ -265,10 +310,60 @@ Common Industry Breakpoints (but take your own project into consideration)
 		width: 100%;
 	}
 	
-	/* nav tablet styles */
-	nav ul{
-		display:none;
+	.menu{
+		padding:8px;
 	}
+	.menu ul li:nth-child(2){
+		margin-right:0px;	
+	}
+	.menu ul li:nth-child(3){
+		margin-left:0px;	
+	}
+    .menu ul.active {
+        display:none;
+    }
+
+    .menu ul {
+        width:30%;
+        position:absolute;
+        top:110%;
+        left:8px;
+        padding:10px;
+        box-shadow:0px 1px 1px rgba(0,0,0,0.15);
+        border-radius:3px;
+        background:#303030;
+		z-index:100;
+    }
+
+    .menu li {
+        margin:5px 0px 5px 0px;
+        float:none;
+        display:block;
+    }
+
+    .menu a {
+        display:block;
+    }
+	.menu a:hover {
+		text-decoration:none;
+		color:#2ba9de;
+	}
+    .toggle-nav {
+        padding:8px;
+		width:25px;
+        display:inline-block;
+        border-radius:3px;
+        background:#303030;
+        color:#777;
+        font-size:20px;
+        transition:color linear 0.15s;
+    }
+
+    .toggle-nav:hover, .toggle-nav.active {
+        text-decoration:none;
+        color:#2ba9de;
+    }
+	
 	
 	#product-features div{
 		margin:20px 0;
@@ -303,6 +398,10 @@ Common Industry Breakpoints (but take your own project into consideration)
 	header div p{
 		margin-bottom:30px;	
 	}
+	
+    .menu ul {
+        width:25%;
+    }
 	
 	#testimonials div{
 		top:0;
