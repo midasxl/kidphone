@@ -39,8 +39,12 @@ nav ul li a{
 nav ul li a:hover{
 	color: #333;	
 }
-
-
+* , *:before, *:after{ 
+     -moz-box-sizing:border-box; 
+     -webkit-box-sizing:border-box; 
+     -ms-box-sizing:border-box;
+	 box-sizing:border-box; 
+   }
 
 /*------------------------------ NAV ------------------------------ */
 nav{
@@ -350,7 +354,7 @@ Common Industry Breakpoints (but take your own project into consideration)
 	}
     .toggle-nav {
         padding:8px;
-		width:25px;
+		width:40px;
         display:inline-block;
         border-radius:3px;
         background:#303030;
